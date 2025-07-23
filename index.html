@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goal Setting Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="step" id="step1">
+            <h2>Relax</h2>
+            <p>WOOP takes only five to ten minutes of uninterrupted time. Take a quiet moment and make yourself comfortable. The next minutes just belong to you.</p>
+            <button onclick="nextStep(2)">Let's get started</button>
+        </div>
+        <div class="step" id="step2" style="display:none;">
+            <h2>What is your Wish?</h2>
+            <p>What is your most important wish or concern in your current life? Pick a wish that is challenging for you but that you can fulfill.</p>
+            <input type="text" id="wish" placeholder="Note your wish in 3-6 words">
+            <button onclick="nextStep(3)">Continue</button>
+            <button class="back-button" onclick="prevStep(1)">Back</button>
+        </div>
+        <div class="step" id="step3" style="display:none;">
+            <h2>What is the best Outcome?</h2>
+            <p>What would be the best thing, the best outcome about fulfilling your wish? How would fulfilling your wish make you feel?</p>
+            <input type="text" id="outcome" placeholder="Note your best outcome in 3-6 words">
+            <button onclick="nextStep(4)">Continue</button>
+            <button class="back-button" onclick="prevStep(2)">Back</button>
+        </div>
+        <div class="step" id="step4" style="display:none;">
+            <h2>Imagine</h2>
+            <p>Now take a moment and imagine your outcome. Imagine things fully.</p>
+            <button onclick="nextStep(5)">Continue</button>
+            <button class="back-button" onclick="prevStep(3)">Back</button>
+        </div>
+        <div class="step" id="step5" style="display:none;">
+            <h2>Identify your Obstacle</h2>
+            <p>What is it within you that holds you back from fulfilling your wish? What is your main inner obstacle?</p>
+            <input type="text" id="obstacle" placeholder="Note your inner obstacle in 3-6 words">
+            <button onclick="nextStep(6)">Continue</button>
+            <button class="back-button" onclick="prevStep(4)">Back</button>
+        </div>
+        <div class="step" id="step6" style="display:none;">
+            <h2>Imagine</h2>
+            <p>Now take a moment and imagine your obstacle. Imagine things fully.</p>
+            <button onclick="nextStep(7)">Continue</button>
+            <button class="back-button" onclick="prevStep(5)">Back</button>
+        </div>
+        <div class="step" id="step7" style="display:none;">
+            <h2>Make an if-then Plan</h2>
+            <p>What can you do to overcome your obstacle? Name one action you can take or one thought you can think to overcome your obstacle.</p>
+            <input type="text" id="action" placeholder="Name an action">
+            <button onclick="nextStep(8)">Continue</button>
+            <button class="back-button" onclick="prevStep(6)">Back</button>
+        </div>
+        <div class="step" id="step8" style="display:none;">
+            <h2>Your if-then Plan</h2>
+            <p>If <span id="obstacleText"></span>, then I will <span id="actionText"></span>.</p>
+            <button onclick="nextStep(9)">Continue</button>
+            <button class="back-button" onclick="prevStep(7)">Back</button>
+        </div>
+        <div class="step" id="step9" style="display:none;">
+            <h2>Slowly Repeat</h2>
+            <p>If <span id="obstacleTextRepeat"></span>, then I will <span id="actionTextRepeat"></span>.</p>
+            <button onclick="nextStep(10)">Continue</button>
+            <button class="back-button" onclick="prevStep(8)">Back</button>
+        </div>
+        <div class="step" id="step10" style="display:none;">
+            <h2>Congratulations</h2>
+            <p>You have completed a WOOP. You can view your WOOP summary on the next page and store it for your own use.</p>
+            <button onclick="showResult()">Continue</button>
+            <button class="back-button" onclick="prevStep(9)">Back</button>
+        </div>
+        <div class="step" id="result" style="display:none;">
+            <h2>Your WOOP Summary</h2>
+            <p><strong>Wish:</strong> <span id="resultWish"></span></p>
+            <p><strong>Outcome:</strong> <span id="resultOutcome"></span></p>
+            <p><strong>Obstacle:</strong> <span id="resultObstacle"></span></p>
+            <p><strong>Plan:</strong> If <span id="resultObstacleRepeat"></span>, then I will <span id="resultActionRepeat"></span>.</p>
+            <button onclick="restart()">Start Again</button>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
